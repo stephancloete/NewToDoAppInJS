@@ -1,5 +1,5 @@
-
-{
+/* Resets */
+*{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -16,7 +16,7 @@ input:not([type="checkbox"]), button {
 
 body {
 	background: lightgrey;
-	color: black;
+	color: rgb(21, 21, 21);
 }
 
 section {
@@ -27,15 +27,118 @@ section {
 }
 
 h2 {
-	color: black;
+	color: rgb(21, 21, 21);
 	font-size: 1rem;
 	font-weight: 400;
 	margin-bottom: 0.5rem;
 }
 
 h4 {
-	color: grey;
+	color: #555555;
 	font-size: 0.875rem;
 	font-weight: 700;
 	margin-bottom: 0.5rem;
+}
+
+.input 
+    input[type="text"],
+    input[type="date"]{
+	display: block;
+	width: 100%;
+	font-size: 1.125rem;
+	padding: 1rem 1.5rem;
+	color: rgb(21, 21, 21);
+	background-color: #FFF;
+	border-radius: 0.5rem;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	margin-bottom: 1.5rem;
+}
+
+.input input[type="date"] {
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+.input button {
+	display: block;
+	width: 100%;
+	font-size: 1.125rem;
+	padding: 1rem 1.5rem;
+	color: #FFF;
+	font-weight: 700;
+	text-transform: uppercase;
+	background-color: #EA40A4;
+	box-shadow: 0px 0px 4px rgba(234, 64, 164, 0.75);
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: 0.2s ease-out;
+}
+
+.input button:hover {
+	opacity: 0.75;
+}
+
+.output .list {
+	margin: 1rem 0;
+    width: 100%;
+}
+
+.output .taskItem {
+	display: flex;
+	align-items: center;
+	background-color: #FFF;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	margin-bottom: 1rem;
+}
+
+.taskItem label {
+	display: block;
+	margin-right: 1rem;
+	cursor: pointer;
+}
+
+.taskItem .taskContent {
+	flex: 1 1 0%;
+}
+
+.taskItem .taskContent input {
+	color: rgb(21, 21, 21);
+	font-size: 1.125rem;
+}
+
+.taskItem .actions {
+	display: flex;
+	align-items: center;
+}
+
+.taskItem .actions button {
+	display: block;
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	color: #FFF;
+	cursor: pointer;
+	transition: 0.2s ease-in-out;
+}
+
+.taskItem .actions button:hover {
+	opacity: 0.75;
+}
+
+.taskItem .actions .edit {
+	margin-right: 0.5rem;
+	background-color: #EA40A4;
+}
+
+.taskItem .actions .delete {
+	background-color: #ff5b57;
+}
+
+.taskItem.done .taskContent input {
+	text-decoration: line-through;
+	color: #555555;
 }
