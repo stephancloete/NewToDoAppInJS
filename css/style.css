@@ -28,9 +28,12 @@ section {
 
 h2 {
 	color: rgb(21, 21, 21);
-	font-size: 1rem;
+	font-size: 2rem;
 	font-weight: 400;
 	margin-bottom: 0.5rem;
+	text-align: center;
+	font-weight: 700;
+	text-transform: uppercase;
 }
 
 h4 {
@@ -58,9 +61,9 @@ h4 {
     cursor: pointer;
 }
 
-input[type="checkbox"] {
+/* input[type="checkbox"] {
 	display: none;
-}
+} */
 
 .input button {
 	display: block;
@@ -70,8 +73,8 @@ input[type="checkbox"] {
 	color: #FFF;
 	font-weight: 700;
 	text-transform: uppercase;
-	background-color: #EA40A4;
-	box-shadow: 0px 0px 4px rgba(234, 64, 164, 0.75);
+	background-color: #4095ea;
+	box-shadow: 0px 0px 4px #29649f;
 	border-radius: 0.5rem;
 	cursor: pointer;
 	transition: 0.2s ease-out;
@@ -131,7 +134,7 @@ input[type="checkbox"] {
 
 .taskItem .actions .edit {
 	margin-right: 0.5rem;
-	background-color: #EA40A4;
+	background-color: #4095ea;
 }
 
 .taskItem .actions .delete {
