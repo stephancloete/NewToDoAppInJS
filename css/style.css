@@ -145,3 +145,24 @@ h4 {
 	text-decoration: line-through;
 	color: #555555;
 }
+
+.sort button {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+	font-size: 1rem;
+	padding: 0.5rem 1rem;
+	color: #FFF;
+	font-weight: 500;
+	text-transform: uppercase;
+	background-color: #4095ea;
+	box-shadow: 0px 0px 4px #29649f;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: 0.2s ease-out;
+}
+
+.sort button:hover {
+	opacity: 0.75;
+}

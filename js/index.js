@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
 	//get tasks from local storage
-     /*var*/ tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 	const newTaskForm = document.querySelector('#newTaskForm');
 
 	newTaskForm.addEventListener('submit', e => {
@@ -97,6 +97,7 @@ if (task.done) {
 			const input = content.querySelector('input');
 			input.removeAttribute('readonly');
 			input.focus();
+			
 			input.addEventListener('blur', (e) => {
 				input.setAttribute('readonly', true);
 				task.content = e.target.value;
@@ -110,6 +111,7 @@ if (task.done) {
 			tasks = tasks.filter(t => t != task);
 			localStorage.setItem('tasks', JSON.stringify(tasks));
 			displayTasks()
+
 		})
 	})
 }
