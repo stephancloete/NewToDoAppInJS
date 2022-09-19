@@ -43,6 +43,7 @@ function displayTasks () {
 		const actions = document.createElement('div');
 		const edit = document.createElement('button');
 		const deleteButton = document.createElement('button');
+		const sortBtn = document.querySelector('#sortBtn');
 
 		input.type = 'checkbox';
 		input.checked = task.done;
@@ -75,23 +76,23 @@ function displayTasks () {
 
 		taskList.appendChild(taskItem);
 
-if (task.done) {
-			taskItem.classList.add('done');
-		}
-		
-		input.addEventListener('change', (e) => {
-			task.done = e.target.checked;
-			localStorage.setItem('tasks', JSON.stringify(tasks));
+		if (task.done) {
+					taskItem.classList.add('done');
+				}
+				
+				input.addEventListener('change', (e) => {
+					task.done = e.target.checked;
+					localStorage.setItem('tasks', JSON.stringify(tasks));
 
-			if (task.done) {
-				taskItem.classList.add('done');
-			} else {
-				taskItem.classList.remove('done');
-			}
+					if (task.done) {
+						taskItem.classList.add('done');
+					} else {
+						taskItem.classList.remove('done');
+					}
 
-			displayTasks()
+					displayTasks()
 
-		})
+				})
 
 		edit.addEventListener('click', (e) => {
 			const input = content.querySelector('input');
@@ -113,5 +114,20 @@ if (task.done) {
 			displayTasks()
 
 		})
+		
+		
+		
+		
+
 	})
+	
+	
 }
+
+sortBtn.addEventListener('click', (e)=> {
+	console.log('sort button');
+	tasks.sort((a, b) => a.content !== b.content ? a.content < b.content ? -1 : 1 : 0);
+	console.log(tasks);
+	displayTasks()
+})
+
