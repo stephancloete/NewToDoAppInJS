@@ -43,7 +43,9 @@ function displayTasks () {
 		const actions = document.createElement('div');
 		const edit = document.createElement('button');
 		const deleteButton = document.createElement('button');
+		const date = document.createElement('div');
 		const sortBtn = document.querySelector('#sortBtn');
+
 
 		input.type = 'checkbox';
 		input.checked = task.done;
@@ -57,12 +59,15 @@ function displayTasks () {
 		} */
 		
 		content.classList.add('taskContent');
+		date.classList.add('taskDate');
 		actions.classList.add('actions');
 		edit.classList.add('edit');
 		deleteButton.classList.add('delete');
 		content.innerHTML = `<input type="text" value="${task.content}" readonly>`;
+		date.innerHTML = `<input type="date" value="${task.date}" readonly>`;
 		edit.innerHTML = 'Edit';
 		deleteButton.innerHTML = 'Delete';
+		
 
 		label.appendChild(input);
 		label.appendChild(span);
@@ -72,9 +77,12 @@ function displayTasks () {
 		
 		taskItem.appendChild(label);
 		taskItem.appendChild(content);
+		taskItem.appendChild(date);
 		taskItem.appendChild(actions);
+		
 
 		taskList.appendChild(taskItem);
+
 
 		if (task.done) {
 					taskItem.classList.add('done');
@@ -96,23 +104,34 @@ function displayTasks () {
 
 		edit.addEventListener('click', (e) => {
 			const input = content.querySelector('input');
+			console.log(input);
 			input.removeAttribute('readonly');
 			input.focus();
+			
+			/* const dateInput = content.querySelector('date');
+			dateInput.removeAttribute('readonly');
+			dateInput.focus(); */
 			
 			input.addEventListener('blur', (e) => {
 				input.setAttribute('readonly', true);
 				task.content = e.target.value;
 				localStorage.setItem('tasks', JSON.stringify(tasks));
 				displayTasks()
-
 			})
+
+			/* dateInput.addEventListener('blur', (e) => {
+				dateInput.setAttribute('readonly', true);
+				task.date = e.target.value;
+				localStorage.setItem('tasks', JSON.stringify(tasks));
+				displayTasks()
+			}) */	
 		})
 
 		deleteButton.addEventListener('click', (e) => {
 			tasks = tasks.filter(t => t != task);
 			localStorage.setItem('tasks', JSON.stringify(tasks));
+			
 			displayTasks()
-
 		})
 	})
 	
