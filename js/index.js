@@ -6,6 +6,7 @@ window.addEventListener('load', () => {
 	newTaskForm.addEventListener('submit', e => {
 		e.preventDefault();
 
+		//Create task object
 		const task = {
 			content: e.target.elements.taskInput.value,
 			date: e.target.elements.dueDate.value,
@@ -24,8 +25,7 @@ window.addEventListener('load', () => {
 
 		displayTasks()
 	})
-	displayTasks()
-})
+	displayTasks()})
 
 function displayTasks () {
 	const taskList = document.querySelector('#taskList');
@@ -114,20 +114,26 @@ function displayTasks () {
 			displayTasks()
 
 		})
-		
-		
-		
-		
-
 	})
-	
 	
 }
 
-sortBtn.addEventListener('click', (e)=> {
-	console.log('sort button');
-	tasks.sort((a, b) => a.content !== b.content ? a.content < b.content ? -1 : 1 : 0);
-	console.log(tasks);
+//Listen for sort button being clicked
+sortBtn.addEventListener('click', (e,)=> {
+	//Sort task objects in tasks array alphabetically
+	tasks.sort((a, b) => {
+		let ca = a.content.toLowerCase(),
+			cb = b.content.toLowerCase();
+	
+		if (ca < cb) {
+			return -1;
+		}
+		if (ca > cb) {
+			return 1;
+		}
+		return 0;
+	});
+
 	displayTasks()
 })
 
