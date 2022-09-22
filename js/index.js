@@ -1,8 +1,11 @@
 window.addEventListener('load', () => {
-	//get tasks from local storage
+	//get tasks from local storage and declare tasks array
     tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 	const newTaskForm = document.querySelector('#newTaskForm');
 
+
+
+	
 	newTaskForm.addEventListener('submit', e => {
 		e.preventDefault();
 
@@ -51,12 +54,6 @@ function displayTasks () {
 		input.checked = task.done;
 		
 		span.classList.add('bubble');
-		
-		/*if (task.category == 'personal') {
-			span.classList.add('personal');
-		} else {
-			span.classList.add('business');
-		} */
 		
 		content.classList.add('taskContent');
 		date.classList.add('taskDate');
@@ -152,7 +149,8 @@ sortBtn.addEventListener('click', (e,)=> {
 		}
 		return 0;
 	});
-
-	displayTasks()
+	//Store re-ordered tasks to local storage
+	localStorage.setItem('tasks', JSON.stringify(tasks));		
+	displayTasks();
 })
 

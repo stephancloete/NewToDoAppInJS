@@ -124,12 +124,13 @@ h4 {
 }
 
 .taskItem .taskDate input {
-	color: rgb(0, 0, 0);
+	color: rgb(68, 68, 68);
 	font-size: 1.125rem;
 	padding: 0rem;
 	width: auto;
 	margin: auto;
 	box-shadow: none;
+	font-size: small;
 }
 
 .taskItem .actions {
