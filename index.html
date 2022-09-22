@@ -1,87 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>New JavaScript ToDo App</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
+    <head>
+        <title>New JavaScript ToDo App</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
 
-<body>
-	<section class="heading">
-        <h2>To Do List</h2>
-    </section>
+    <body>
+        <section class="heading">
+            <h2>To Do List</h2>
+        </section>
 
-    <section class="input">
-        <form id="newTaskForm">
-            <h4>CREATE A TASK</h4>
-            <input 
-                type="text"
-                placeholder="Add task here"
-                name="taskInput"
-                id="taskInput">
+        <section class="input">
+            <form id="newTaskForm">
+                <h4>CREATE A TASK</h4>
+                <input type="text" placeholder="Add task here" name="taskInput" id="taskInput">
 
-            <h4>DUE DATE</h4>
-            <input 
-                type="date"
-                name="dueDate"
-                id="dueDate">
+                <h4>DUE DATE</h4>
+                <input type="date" name="dueDate" id="dueDate">
 
-            <button id="add">Add</button>
-        </form>
-    </section>
+                <button id="add">Add</button>
+            </form>
+        </section>
 
-    <section class="output">
-        <h4>TASKS</h4>
-        <div class="list" id="taskList">
-            <!-- <div class="taskItem">
-                <label>
-                    <input type="checkbox">
-                </label>
-
-                <div class="taskContent">
-                    <input 
-                        type="text"
-                        placeholder="e.g. Do Laundry"
-                        readonly>
-                </div>
-
-                <div class="actions">
-                    <button class="edit">Edit</button>
-                    <button class="delete">Delete</button>
-                </div>
+        <section class="output">
+            <h4>TASKS</h4>
+            <div class="list" id="taskList">
             </div>
 
-            <div class="taskItem">
-                <label>
-                   <input type="checkbox">
-                </label>
+        </section>
 
-                <div class="taskContent">
-                    <input 
-                        type="text"
-                        placeholder="e.g. Feed dogs"
-                        readonly>
-                </div>
-
-                <div class="actions">
-                    <button class="edit">Edit</button>
-                    <button class="delete">Delete</button>
-                </div>
-            </div>
- -->
+        <div class='sortList'>
+            <button id="sortBtn">Sort</button>
         </div>
 
-        
-    </section>
+        <footer id="footer"></footer>
 
-    <div class = 'sortList'>
-        <button id="sortBtn">Sort</button>
-    </div>
+        <script src="/js/index.js"></script>
 
-    <footer id="footer">
-
-    </footer>
-
-    <script src="/js/index.js"></script>
-
-</body>
+    </body>
 </html>

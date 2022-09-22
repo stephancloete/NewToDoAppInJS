@@ -80,7 +80,10 @@ function displayTasks () {
 
 		taskList.appendChild(taskItem);
 
-
+		if (task.date == '') {
+			date.classList.add('taskDateBlank');
+		}
+		
 		if (task.done) {
 					taskItem.classList.add('done');
 				}
