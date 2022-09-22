@@ -3,9 +3,7 @@ window.addEventListener('load', () => {
     tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 	const newTaskForm = document.querySelector('#newTaskForm');
 
-
-
-	
+	//Submit form when 'Add' button clicked
 	newTaskForm.addEventListener('submit', e => {
 		e.preventDefault();
 
@@ -28,8 +26,10 @@ window.addEventListener('load', () => {
 
 		displayTasks()
 	})
-	displayTasks()})
+	displayTasks()
+})
 
+//Display Tasks entered in DOM
 function displayTasks () {
 	const taskList = document.querySelector('#taskList');
 
@@ -47,25 +47,21 @@ function displayTasks () {
 		const edit = document.createElement('button');
 		const deleteButton = document.createElement('button');
 		const date = document.createElement('div');
-		const sortBtn = document.querySelector('#sortBtn');
-
-
+		
 		input.type = 'checkbox';
 		input.checked = task.done;
-		
-		span.classList.add('bubble');
 		
 		content.classList.add('taskContent');
 		date.classList.add('taskDate');
 		actions.classList.add('actions');
 		edit.classList.add('edit');
 		deleteButton.classList.add('delete');
+		
 		content.innerHTML = `<input type="text" value="${task.content}" readonly>`;
 		date.innerHTML = `<input type="date" value="${task.date}" readonly>`;
 		edit.innerHTML = 'Edit';
 		deleteButton.innerHTML = 'Delete';
 		
-
 		label.appendChild(input);
 		label.appendChild(span);
 		
@@ -77,7 +73,6 @@ function displayTasks () {
 		taskItem.appendChild(date);
 		taskItem.appendChild(actions);
 		
-
 		taskList.appendChild(taskItem);
 
 		if (task.date == '') {
@@ -104,13 +99,8 @@ function displayTasks () {
 
 		edit.addEventListener('click', (e) => {
 			const input = content.querySelector('input');
-			console.log(input);
 			input.removeAttribute('readonly');
 			input.focus();
-			
-			/* const dateInput = content.querySelector('date');
-			dateInput.removeAttribute('readonly');
-			dateInput.focus(); */
 			
 			input.addEventListener('blur', (e) => {
 				input.setAttribute('readonly', true);
@@ -118,23 +108,30 @@ function displayTasks () {
 				localStorage.setItem('tasks', JSON.stringify(tasks));
 				displayTasks()
 			})
+		})
 
-			/* dateInput.addEventListener('blur', (e) => {
+		/* edit.addEventListener('click', (e) => {
+			
+			const dateInput = content.querySelector('dueDate');
+			dateInput.removeAttribute('readonly');
+			dateInput.focus();
+			
+			dateInput.addEventListener('blur', (e) => {
 				dateInput.setAttribute('readonly', true);
 				task.date = e.target.value;
 				localStorage.setItem('tasks', JSON.stringify(tasks));
 				displayTasks()
-			}) */	
-		})
+			})
+		}) */
 
+
+		//Add functionality for 'Delete' button
 		deleteButton.addEventListener('click', (e) => {
 			tasks = tasks.filter(t => t != task);
 			localStorage.setItem('tasks', JSON.stringify(tasks));
-			
 			displayTasks()
 		})
 	})
-	
 }
 
 //Listen for sort button being clicked
