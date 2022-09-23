@@ -13,19 +13,19 @@ input:not([type="checkbox"]), button {
 	background: none;
 	cursor: initial;
 }
-/* */
+/* Style body background colour*/
 body {
 	background: lightgrey;
 	color: rgb(21, 21, 21);
 }
-/* */
+/* Style section margin and padding*/
 section {
 	margin-top: 2rem;
 	margin-bottom: 2rem;
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
 }
-/* */
+/* Style h2 elements*/
 h2 {
 	color: rgb(21, 21, 21);
 	font-size: 2rem;
@@ -35,7 +35,7 @@ h2 {
 	font-weight: 700;
 	text-transform: uppercase;
 }
-/* */
+/* Style h4 elements*/
 h4 {
 	color: #555555;
 	font-size: 0.875rem;
@@ -185,3 +185,31 @@ h4 {
 .sortList button:hover {
 	opacity: 0.75;
 }
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	section {
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+	section {
+		width: 70%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+	section {
+		width: 60%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+} 
